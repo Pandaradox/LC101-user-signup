@@ -13,22 +13,21 @@ def validate():
     pass2 = request.form['pass2']
     email = request.form['email']
 # Scanning username for length between 3 and 20 (inclusive) and spaces
+    username_error = ""
     if " " in username:
         username_error = "DENIED: Agent Name Cannot Contain Spaces"
-    else:
-        username_error = ""
     if len(username) < 3 or len(username) > 20:
         username_error = "DENIED: Agent Name Length"
 # Scanning password for length between 3 and 20 (inclusive) and spaces
+    pass_error = ""
     if " " in pass1:
         pass_error = "DENIED: Codephrase Cannot Contain Spaces"
-    else:
-        pass_error = ""
     if len(pass1) < 3 or len(pass1) > 20:
         pass_error = "DENIED: Codephrase Name Length"
     if pass1 != pass2:
         pass_error = "DENIED: Codephrase Confirmation Invalid"
 # Scanning email for length and appropriate characters (no space but @ and .)
+    email_error = ""
     if " " in email:
         email_error = "DENIED: Invalid Email"
     if "@" not in email:
@@ -37,8 +36,7 @@ def validate():
         email_error = "DENIED: Invalid Email"
     if len(email) > 0 and (len(email) < 3 or len(email) > 20):
         email_error = "DENIED: Invalid Email Length"
-    else:
-        email_error = ""
+
 # Checks for no errors, redirecting to a Welcome page instead.  Else goes back to form.
     if len(username_error)== 0 and len(pass_error)== 0 and len(email_error)== 0:
         return render_template("welcome.html", username=username)

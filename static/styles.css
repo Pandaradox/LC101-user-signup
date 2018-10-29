@@ -345,7 +345,8 @@ template {
     color: #f00;
     font-family: 'Courier New', Courier, monospace;
     margin: auto;
-    max-width: 500px;
+    max-width: 50vw;
+    font-size: 20px;
 }
 figure {
     margin: 20px;
@@ -356,6 +357,8 @@ footer {
 h1, h2, h3, h4, h5 {
     text-transform: uppercase;
     font-weight: bold;
+    padding: 10px;
+    text-align: center;
 }
 li, p {
     margin: 10px
@@ -390,4 +393,12 @@ nav a {
   z-index: 2;
   background-size: 500% 2px, 3px 500%;
   pointer-events: none;
+}
+input {
+    align-content: center;
+    width: 100%;
+    padding: 10px;
+}
+input [submit] {
+    width: 110%;
 }
