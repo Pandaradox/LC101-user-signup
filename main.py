@@ -28,14 +28,15 @@ def validate():
         pass_error = "DENIED: Codephrase Confirmation Invalid"
 # Scanning email for length and appropriate characters (no space but @ and .)
     email_error = ""
-    if " " in email:
-        email_error = "DENIED: Invalid Email"
-    if "@" not in email:
-        email_error = "DENIED: Invalid Email"
-    if "." not in email:
-        email_error = "DENIED: Invalid Email"
-    if len(email) > 0 and (len(email) < 3 or len(email) > 20):
-        email_error = "DENIED: Invalid Email Length"
+    if len(email) != 0:
+        if " " in email:
+            email_error = "DENIED: Invalid Email1"
+        if "@" not in email:
+            email_error = "DENIED: Invalid Email2"
+        if "." not in email:
+            email_error = "DENIED: Invalid Email3"
+        if len(email) < 3 or len(email) > 20:
+            email_error = "DENIED: Invalid Email Length"
 
 # Checks for no errors, redirecting to a Welcome page instead.  Else goes back to form.
     if len(username_error)== 0 and len(pass_error)== 0 and len(email_error)== 0:

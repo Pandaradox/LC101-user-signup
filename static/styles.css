@@ -347,6 +347,7 @@ template {
     margin: auto;
     max-width: 50vw;
     font-size: 20px;
+    box-sizing: border-box;
 }
 figure {
     margin: 20px;
@@ -395,10 +396,6 @@ nav a {
   pointer-events: none;
 }
 input {
-    align-content: center;
     width: 100%;
     padding: 10px;
-}
-input [submit] {
-    width: 110%;
 }
